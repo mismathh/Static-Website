@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Final Assessment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <style>
+            body{
+                max-width: 90vw;    /*page content to cover 90% of viewport*/
+                margin: auto;
+                background-color: rgb(123, 144, 172);
+            }
+            div{
+                margin: auto;
+                max-width: 1100px; /*content width limited to 1100px*/
+            }
+            /* CSS for the Title Section */
+            #title{
+                text-align: center;
+                background-color: lightsteelblue;
+                padding: 100px 0 100px 0;
+            }
+            h1{
+                font-family: Impact;
+            }
+            .b1{
+                background-color: lightsteelblue;
+                border-radius: 30px;
+                font-size: 20px;
+                margin-right: 35px;
+            }
+            .b2{
+                background-color: lightslategray;
+                border-radius: 30px;
+                font-size: 20px;
+                margin-right: 35px;
+            }
+            h2, h3{
+                text-align: center;
+            }
+            /* CSS for About Me Section */
+            #about, #header{
+                background-color:lightslategray;
+                padding: 15px 0 0 0;
+                display: flex;
+            }
+            #header1, #header2{
+                font-size: 1.5em;
+                flex-basis: 100%;
+                padding-right: 36px;
+                padding-left: 16px;
+            }
+            #about1, #about2{
+                flex-basis: 100%;
+                padding-right: 36px;
+                padding-left: 16px;
+                padding-bottom: 40px;
+            }
+            /* CSS for Education Section */
+            #edu{
+                background-color: lightsteelblue;
+                padding: 15px 0 30px 5px;
+            }
+            table{
+                border-collapse: separate;
+                border-spacing: 0.75em;
+                border-style: none;
+            }
+            td{
+                width: 400px;
+            }
+            /* CSS for Contact Form Section */
+            #contact{
+                background-color: lightslategrey;
+                padding: 15px 0 100px 5px;
+                text-align: center;
+            }
+            input, textarea{
+                width : 150px;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            label{ 
+                display: inline-block; 
+                width: 100px; 
+                text-align: left 
+            }
+            #dynamic{
+                display: none;
+            }
+            #option-3:checked ~ #dynamic{
+                display: block;
+            }
+            fieldset{
+                display: inline-block;
+                padding: 50px;
+                border-width: 1.2em;
+                border-style: double;
+                border-color: lightsteelblue;
+            }
+            #submit, #reset{
+                width: 5em;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Title Section -->
+        <div id="title">
+            <img src="face.jpg" alt="Image of Myself" style="width: 35%;height: 35%;">
+    
+            <h1>Muzzammil Ismathhimam</h1>
+            <h3>Software Engineer, Web Developer</h3>
+            <br>
+            <a href="#header"><button class="b1">Resume</button></a>
+            <a href="#contact"><button class="b2">Contact Me</button></a>
+        </div>
+        <!-- About Me Section -->
+        <div id="header">
+            <div id="header1">
+                <b>About Me</b>
+            </div>
+            <div id="header2">
+                <b>Basic Information</b>
+            </div>
+        </div>
+        <div id="about">
+            <div id="about1">
+                Hello, my name is Muzzammil Ismathhimam and I am currently 23 years old. 
+                I am in the Computer Programming & Analysis program at Seneca College and 
+                am looking for opportunities that are related to Software Engineering or 
+                Web Development. I have learned the basics of many concepts such as Object-
+                Oriented Programming, and JavaScript for designing websites, and hope to 
+                further improve my skills in the coming future. I would appreciate an 
+                opportunity to show my work if you are interested. Thank you for your time!
+            </div>
+            <div id="about2">
+                Age:    23
+                <br><br>
+                Email:    muziei@hotmail.com
+                <br><br>
+                Language:  English
+                <br><br>
+            </div>
+        </div>
+        <!-- Education Section -->
+        <div id="edu">
+            <h2>Education</h2>
+            <table>
+                <tr>
+                    <td style="background-color: lightslategrey; font-size: 1.2em;"><center><b>2020-2023(expected)
+                        <br><br>
+                        Computer Programming
+                        <br>
+                        & Analysis</b></center>
+                    </td>
+                    <td><br>
+                        <b>Computer Programming & Analysis Advanced Diploma
+                        <br>
+                        SENECA COLLEGE</b>
+                        <br><br>
+                        Awarded President's Honour List - First Semester
+                        <br>
+                        3-year program
+                        <br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: lightslategrey; font-size: 1.2em;"><center><b>2016-2020
+                        <br><br>
+                        Aerospace Engineering</b></center>
+                    </td>
+                    <td><br>Aerospace Engineering Bachelor's Degree<br>RYERSON UNIVERSITY
+                        <br><br>
+                        4-year program
+                        <br><br>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- Contact Form Section -->
+        <div id="contact">
+            <h2>Contact Me</h2>
+            <fieldset>
+                <p>*Please fill out all fields.</p>
+                <form id="formID" method="POST" action="https://httpbin.org/post">
+                    <label for="name">Name:</label>
+                    <input type="text" max length="40" id="name" name="name" required>
+                    <br>
+                    <label for="email">Email Address:</label>
+                    <input type="email" max length="20" id="email" name="email" placeholder="email@gmail.com" required>
+                    <br>
+                    <label for="address">Address:</label>
+                    <input type="text" max length="30" id="address" name="address" required>
+                    <br>
+                    <label for="city">City:</label>
+                    <input type="text" list="cities" id="city" name="city" autocomplete="on" required>
+                    <br>
+                    <datalist id="cities">
+                        <option value="Toronto"></option>
+                        <option value="Mississauga"></option>
+                        <option value="Brampton"></option>
+                        <option value="Whitby"></option>
+                        <option value="Vaughan"></option>
+                        <option value="Vancouver"></option>
+                        <option value="Edmonton"></option>
+                        <option value="Pickering"></option>
+                        <option value="Ottawa"></option>
+                        <option value="Winnipeg"></option>
+                        <option value="St. John's"></option>
+                    </datalist>
+                    <label for="postal">Postal Code:</label>
+                    <input type="text" size="15" max length="6" id="postal" name="postal" pattern="[A-Za-z][0-9][A-Za-z][ ]?[0-9][A-Za-z][0-9]" placeholder="Ex: A1A 1A1" required>
+                    <br>
+                    <p style="text-align: left;">Reason for Contact:</p>
+                    <input type="radio" name="options" id="option-1" value="1" checked/>
+                    <label for="option-1">Question</label>
+                    <br>
+                    <input type="radio" name="options" id="option-2" value="2"/>
+                    <label for="option-2">Comment</label>
+                    <br>
+                    <input type="radio" name="options" id="option-3" value="3"/>
+                    <label for="option-3">Hiring</label>
+                    <br>
+                    <div id="dynamic">
+                        <label for="rate">Hourly Rate:</label>
+                        <input type="number" size="15" min="0" id="rate" name="rate">
+                        <br>
+                    </div>
+                    <label for="message">Message:<br><br><br><br><br><br><br><br><br></label>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Input message..." required></textarea>
+                    <br>
+                    <input type="submit" id="submit" value="Submit">
+                    <input type="reset"  id="reset" value="Clear">
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
